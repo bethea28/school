@@ -39,6 +39,7 @@ var List = React.createClass({
             }.bind(this))}
 
           </ul>
+          {this.props.children}
         </div>
     )
   }
