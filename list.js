@@ -29,17 +29,15 @@ var List = React.createClass({
       console.log(this.state.schools)
     })
   },
-            // {this.state.schools.map(function(ele,key){
-            //    return <li onClick ={this.handleClick} key = {key}> {ele} </li>
-            // }.bind(this))}
 
   render(){
     return(
         <div>
           <ul>
-            {this.state.schools.map(function(a,b){
-              return <li key ={b}> {a} </li>
-            })}
+            {this.state.schools.map(function(ele,key){
+               return <li onClick ={this.handleClick} key = {key}> {ele} </li>
+            }.bind(this))}
+
           </ul>
         </div>
     )
