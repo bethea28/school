@@ -28,10 +28,10 @@ describe('Education', () => {
 /*
   * Test the /GET route
   */
-  describe('/GET schools', () => {
+  describe('/GET school', () => {
       it('it should GET all the schools', (done) => {
         chai.request(server)
-            .get('/api/schools')
+            .get('/api/school')
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
@@ -50,7 +50,7 @@ describe('Education', () => {
 
         }
         chai.request(server)
-            .post('/api/schools')
+            .post('/api/school')
             .send(school)
             .end((err, res) => {
                 res.should.have.status(200);
@@ -89,7 +89,7 @@ describe('Education', () => {
   describe('/GET school', () => {
       it('it should GET a single school along with all its students', (done) => {
         chai.request(server)
-            .get('/api/schools/1')
+            .get('/api/school/1')
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('object');
