@@ -33,6 +33,7 @@ var List = React.createClass({
   render(){
     return(
         <div>
+          <button> push me </button>
           <ul>
             {this.state.schools.map(function(ele,key){
                return <li onClick ={this.handleClick} key = {key}> {ele} </li>

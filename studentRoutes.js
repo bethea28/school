@@ -10,11 +10,12 @@ var createStudent = (req,res) =>{
   Student.create({
     name: req.body.name,
     age: req.body.age,
-    grade: req.body.grade
+    grade: req.body.grade,
+    SchoolId: req.body.SchoolId
   })
   .then((data)=>{
     // console.log(data)
-    // data.dataValues.message = 'Student successfully added!' 
+    // data.dataValues.message = 'Student successfully added!'
     res.send({student:data, message: "Student successfully added!"})
   })
   .catch((err)=>{

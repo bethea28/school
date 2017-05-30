@@ -1,6 +1,7 @@
 import React from 'react'
 import List from './list'
-import Post from './post'
+import Student from './studentPost'
+import School from './schoolPost'
 
 import {render} from 'react-dom'
 import ReactDOM from 'react-dom'
@@ -8,12 +9,24 @@ import {browserHistory, Router, Route} from 'react-router'
 
 
 
-ReactDOM.render(
-  <Router history = {browserHistory}>
+
+
+const routes = (
+  <div>
 
     <Route path ='/' component= {List}/>
-    <Route path ='/post' component= {Post}/>
+    <Route path ='/student' component= {Student}/>
+    <Route path ='/student/:id' component= {Student}/>
+    <Route path ='/school' component= {School}/>
+  </div>
 
-  </Router>, document.getElementById('root')
+)
+
+render(
+  <Router history = {browserHistory} routes = {routes}/>,
+
+
+
+  document.getElementById('root')
 
 )

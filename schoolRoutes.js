@@ -15,7 +15,7 @@ var createSchool = (req,res) =>{
   })
   .then((data)=>{
     // console.log(data)
-    data.dataValues.message = 'School successfully added!' 
+    data.dataValues.message = 'School successfully added!'
     res.send(data)
   })
   .catch((err)=>{
@@ -35,11 +35,12 @@ var getAllSchools = (req,res) =>{
 var getOneSchool = (req,res) =>{
   School.findOne({
     where:{
-      id: req.params.id
+      name: req.params.id
     },
-    include: Student
+    // include: Student
   })
   .then((data)=>{
+    console.log(data)
     res.send(data)
   })
   .catch((err)=>{
