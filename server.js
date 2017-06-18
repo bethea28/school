@@ -1,10 +1,10 @@
-var express = require('express')
-var app = express()
-var bodyparser = require('body-parser')
-var path = require('path')
-var db = require('./models')
-var routerSchools = require('./schoolRoutes')
-var routerStudents = require('./studentRoutes')
+let express = require('express')
+let app = express()
+let bodyparser = require('body-parser')
+let path = require('path')
+let db = require('./models')
+let routerSchools = require('./schoolRoutes')
+let routerStudents = require('./studentRoutes')
 
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json())
@@ -20,7 +20,8 @@ app.get('/*', function(req, res) {
 
 db.sequelize.sync().then(function() {
   console.log('working on 3k')
-  app.listen(3000) 
+  app.listen(process.env.PORT || '3000', () => console.log('Listening on port 3000'));
+
 
 })
 

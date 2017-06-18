@@ -1,59 +1,89 @@
 import React, {Component} from 'react'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
 import $ from 'jquery'
-// import axios from 'axios'
+import {submit, change} from './actions'
 let axios = require('axios')
+import store from './store'
 
-
-class School extends Component {
-  constructor(props) {
-  super(props)
-    this.state = {
-      name: '',
-      district: '',
-      size: ''
-    }
-    this.submit = this.submit.bind(this)
-    this.change = this.change.bind(this)
-  }
-
-  submit(event){
-    event.preventDefault()
-    axios.post('/api/school', {
-    name: this.state.name,
-    district: this.state.district,
-    size: this.state.size
-    })
-    .then( (response)=> {
-      console.log(response);
-    })
-    .catch( (error)=> {
-      console.log(error);
-    })
-
-  }
-
-  change(event){
-  this.setState({[event.target.name]: event.target.value})
-  console.log(event.target.value)
-  }
-
-  render(){
+//
+// class School extends Component {
+//   constructor(props) {
+//     super(props)
+//       this.state = {
+//         name: '',
+//         district: '',
+//         size: ''
+//       }
+//       // this.submit = this.submit.bind(this)
+//       // this.handleChange = this.handleChange.bind(this)
+//   }
+//
+//   submit(event){
+//     event.preventDefault()
+//     axios.post('/api/school', {
+//     name: this.state.name,
+//     district: this.state.district,
+//     size: this.state.size
+//     })
+//     .then( (response)=> {
+//       console.log(response);
+//     })
+//     .catch( (error)=> {
+//       console.log(error);
+//     })
+//
+//   }
+//
+//   handleChange(event){
+//   this.setState({[event.target.name]: event.target.value})
+//   console.log(event.target.value)
+//   }
+let School = (props) => {
+  // let handleChange = (event) => {
+  //   console.log(event.target.value)
+  // }
     return (
       <div>
 
-        <form onSubmit = {(event)=>{this.submit(event)}}>
-          <input onChange = {this.change} type = "input" placeholder = 'name' name = 'name'/>
-          <input onChange = {this.change} type = "input" placeholder = 'district' name = 'district' />
-          <input placeholder ='size' onChange = {this.change} type = "input" name = 'size'/>
-          <input type = "submit" name = 'school'/>
-        </form>
+        <form onSubmit = {(event)=>{props.submit(event)}}>
 
+          <input onChange = {(event)=>{props.change(event.target.value)}} type = "input" placeholder = 'name' name = 'name' />
+
+          <input onChange = {(event)=>{props.change(event.target.value)}} type = "input" placeholder = 'district' name = 'district' />
+          
+          <input onChange = {(event)=>{props.change(event.target.value)}} type = "input" placeholder = 'size' name = 'size' />
+
+        </form>
+        {props.name}
+        {props.children}
 
       </div>
     )
-  }
+
 }
 
 
 
-export default School
+
+const mapPropsToState = store => (
+  {
+    name: store.name,
+    district: store.district,
+    size: store.size
+  }
+)
+
+const dispatchPropsToState = (dispatch) => (
+  bindActionCreators({
+   submit, change }, dispatch)
+);
+
+
+//
+export default connect (
+  mapPropsToState,
+  dispatchPropsToState
+) (School)
+
+// export default School
