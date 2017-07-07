@@ -13,14 +13,11 @@ import {BrowserRouter as Router,} from 'react-router-dom'
 
 
 
-
-
-
-// <Route path ='/student' component= {Student}/>
 const Routes = () => (
-
-
-    <Route exact path ='/school' component= {School}></Route>
+ <div>
+  <Route exact path ='/student' component= {Student}></Route>
+  <Route exact path ='/school' component= {School}></Route>
+ </div>
 
 )
 
@@ -38,3 +35,7 @@ render(
   document.getElementById('root')
 
 )
+
+
+
+
