@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 import $ from 'jquery'
 import {submit, change} from './actions'
 let axios = require('axios')
+import Reusable from './reusable'
+
 import store from './store'
 
 //
@@ -55,6 +57,8 @@ let School = (props) => {
           <input onChange = {(event)=>{props.change(event.target.value)}} type = "input" placeholder = 'size' name = 'size' />
 
         </form>
+        <Reusable />
+
         {props.name}
         {props.children}
 

@@ -4498,6 +4498,10 @@
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
+	var _reusable = __webpack_require__(313);
+	
+	var _reusable2 = _interopRequireDefault(_reusable);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -4508,7 +4512,6 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	// import axios from 'axios'
 	var axios = __webpack_require__(40);
 	
 	var Student = function (_Component) {
@@ -4636,7 +4639,9 @@
 	            null,
 	            ' loading '
 	          )
-	        )
+	        ),
+	        _react2.default.createElement(_reusable2.default, null),
+	        this.props.children
 	      );
 	    }
 	  }]);
@@ -18452,6 +18457,10 @@
 	
 	var _actions = __webpack_require__(110);
 	
+	var _reusable = __webpack_require__(313);
+	
+	var _reusable2 = _interopRequireDefault(_reusable);
+	
 	var _store = __webpack_require__(111);
 	
 	var _store2 = _interopRequireDefault(_store);
@@ -18516,6 +18525,7 @@
 	          props.change(event.target.value);
 	        }, type: 'input', placeholder: 'size', name: 'size' })
 	    ),
+	    _react2.default.createElement(_reusable2.default, null),
 	    props.name,
 	    props.children
 	  );
@@ -43608,6 +43618,38 @@
 	    return _reactRouter.withRouter;
 	  }
 	});
+
+/***/ },
+/* 312 */,
+/* 313 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(2);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Reusable = function Reusable(props) {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(
+	      'form',
+	      null,
+	      _react2.default.createElement('input', { placeholder: 'reusable', type: 'text' }),
+	      _react2.default.createElement('input', { type: 'submit' })
+	    )
+	  );
+	};
+	
+	exports.default = Reusable;
 
 /***/ }
 /******/ ]);

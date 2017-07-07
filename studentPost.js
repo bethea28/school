@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import $ from 'jquery'
-// import axios from 'axios'
+import Reusable from './reusable'
 let axios = require('axios')
 
 
@@ -102,8 +102,10 @@ class Student extends Component {
           {this.state.schools.data ? this.state.schools.data.map((ele, key)=>{
             return <option  value = {ele.id} key ={key}> {ele.name}</option>
           }) : <option> loading </option>}
-
         </select>
+
+        <Reusable />
+        {this.props.children}
         
       </div>
 
