@@ -24,11 +24,19 @@ var createStudent = (req,res) =>{
 }
 
 
+const getAllStudents = (req, res) => {
+  Student.findAll({
+
+  }).then((data) => {
+    res.send(data)
+  })
+}
 
 
 
 router.route("/")
   .post(createStudent)
+  .get(getAllStudents)
 
 
 module.exports = router

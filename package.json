@@ -4,6 +4,7 @@
   "description": "",
   "main": "App.js",
   "dependencies": {
+    "apollo-client": "^1.9.0-1",
     "axios": "^0.16.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -13,16 +14,18 @@
     "css-loader": "^0.28.4",
     "express": "^4.15.3",
     "express-router": "^0.0.1",
+    "graphql": "^0.10.5",
     "jquery": "^3.2.1",
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "pg": "^6.2.3",
     "pg-hstore": "^2.3.2",
     "react": "^15.5.4",
+    "react-apollo": "^1.4.8",
+    "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
-    "react-dom": "^15.5.4",
     "react-thunk": "^1.0.0",
     "redux": "^3.6.0",
     "sequelize": "^3.30.4",
@@ -30,7 +33,7 @@
     "webpack": "^1.12.9"
   },
   "engines": {
-  "node": "7.4.0"
+    "node": "7.4.0"
   },
   "devDependencies": {},
   "scripts": {

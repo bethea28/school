@@ -1,7 +1,7 @@
-var express = require('express')
-var app = express()
+// var express = require('express')
+// var app = express()
 var router = require("express").Router()
-var bodyParser = require('body-parser');
+// var bodyParser = require('body-parser');
 var School = require("./models/index").School
 var Student = require("./models/index").Student
 
@@ -16,18 +16,20 @@ var createSchool = (req,res) =>{
   .then((data)=>{
     // console.log(data)
     data.dataValues.message = 'School successfully added!'
-    res.send(data)
+    console.log(data.dataValues)
+    res.send(data.dataValues)
   })
   .catch((err)=>{
     console.log(err)
   })
 }
 
-var getAllSchools = (req,res) =>{
+var getAllSchools = (req,res) => {
   School.findAll({
 
   })
-  .then((data)=>{
+  .then ((data) => { 
+    console.log(data.dataValues)
     res.send(data)
   })
 }
