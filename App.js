@@ -20,7 +20,7 @@ const client = new ApolloClient({
 
 const Routes = () => (
  <div>
-  <Route exact path ='/student' component= {Stdent}></Route>
+  <Route exact path ='/student' component= {Student}></Route>
   <Route exact path ='/school' component= {School}></Route>
  </div>
 
