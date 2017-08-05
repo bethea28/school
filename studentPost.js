@@ -56,28 +56,28 @@ class Student extends Component {
     this.setState({SchoolId: event.target.value})
     // this.setState({Schoolname: event.target.name})
 
-    axios.post('/api/student', {
-    name: this.state.name,
-    age: this.state.age,
-    grade: this.state.grade,
-    SchoolId: this.state.SchoolId
-    })
-    .then( (response)=> {
-      console.log(response);
-    })
-    .catch( (error)=> {
-      console.log(error);
-    })
-
-    axios.get('/api/student/' + this.state.Schoolname)
-
+    // axios.post('/api/student', {
+    // name: this.state.name,
+    // age: this.state.age,
+    // grade: this.state.grade,
+    // SchoolId: this.state.SchoolId
     // })
-    .then( (response)=> {
-      console.log(response);
-    })
-    .catch( (error)=> {
-      console.log(error);
-    })
+    // .then( (response)=> {
+    //   console.log(response);
+    // })
+    // .catch( (error)=> {
+    //   console.log(error);
+    // })
+
+    // axios.get('/api/student/' + this.state.Schoolname)
+
+    // // })
+    // .then( (response)=> {
+    //   console.log(response);
+    // })
+    // .catch( (error)=> {
+    //   console.log(error);
+    // })
   }
   change(event){
   this.setState({[event.target.name]: event.target.value})
